@@ -160,6 +160,17 @@
   margin: 0.25rem;
 }
 
+.input-box {
+  background-color: white;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
 #add-shape-btn {
   background-color: #3298dc;
   border-radius: 0.5rem;
@@ -306,48 +317,113 @@
 #move-button {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
 }
 
-#AddAtom {
-  background-color: #48c774;
+#atomtype {
+  background-color: white;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
   border-radius: 0.5rem;
+  font-weight: bold;
 }
+#latticetype {
+  background-color: white;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
+
 #SelectAtom {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
 }
 #SelectRegion {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
-#SelectAll {
+#SelectAtom {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
+#AddAtom {
+  background-color: #48c774;
+  border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 #CheckSC {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 #AddAtomByCoordinate {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 #AddDummyAtomByCoordinate {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 #RepeatSelectedPattern {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 #TranslatePattern {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 #MoveSelectedPattern {
   background-color: #48c774;
   border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
+#latticeCheck {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 #set-rotation-axis {
   background-color: #3298dc;
   border-radius: 0.5rem;

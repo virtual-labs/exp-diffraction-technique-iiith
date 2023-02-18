@@ -72,8 +72,8 @@ function getMouseCoords(event) {
     ) *
       2 +
     1
-  // mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-  // mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  //   mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+  //   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
   //console.log(mouse);
   return mouse
 }
@@ -113,6 +113,17 @@ var latticetype = currentlattice.options[currentlattice.selectedIndex].text
 var CurrentHull
 var CurrentHullMesh
 var HullList = []
+
+currentlattice.addEventListener('click', function () {
+  // console.log('lattice change to', currentLattice)
+  for (let i = 0; i < atomList.length; i++) {
+    scene.remove(atomList[i])
+  }
+  for (let i = 0; i < HullList.length; i++) {
+    scene.remove(HullList[i])
+  }
+})
+
 // select region enclosed between the atoms
 const selectRegion = document.getElementById('SelectRegion')
 selectRegion.addEventListener('click', function () {
@@ -160,17 +171,6 @@ addSelectList.addEventListener('click', function () {
   }
 })
 
-// respond to select all atoms
-const addSelectAll = document.getElementById('SelectAll')
-addSelectAll.addEventListener('click', function () {
-  if (action != 'selectAll') {
-    action = 'selectAll'
-  } else {
-    action = ''
-    SelectAtomList = []
-  }
-})
-
 // respond to check for SCP
 
 const addCheckSC = document.getElementById('CheckSC')
@@ -179,10 +179,10 @@ addCheckSC.addEventListener('click', function () {
   var checkresult = checkSCP(latticetype, CurrentHull)
   if (checkresult) {
     document.getElementById('latticeCheck').innerHTML =
-      "<span style='color: Green;'>Correct</span>"
+      "<span style='color: Green; font-size: 20px;'>Correct</span>"
   } else {
     document.getElementById('latticeCheck').innerHTML =
-      "<span style='color: red;'>Incorrect</span>"
+      "<span style='color: red; font-size: 20px;'>Incorrect</span>"
   }
 })
 

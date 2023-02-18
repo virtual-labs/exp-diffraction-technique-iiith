@@ -7,10 +7,10 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css"
         />
-        <link
+        <!-- <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.5-b/css/style.min.css"
-        />
+        /> -->
         <link rel="stylesheet" href="./css/main.css" />
     </head>
 
@@ -20,37 +20,29 @@
                 <div class="v-collapsible">Instructions</div>
                 <div id="procedure-message" class="v-content">
                     <li class="instr-font">
-                        This experiment is designed to teach how points and shapes are represented
-                        in computer graphics. Start by editing the coordinates of the point in the
-                        text boxes which are in the Point-Coordinates section.
+                        This experiment is designed to teach how to construct lattices.
                     </li>
                     <li class="instr-font">
-                        Left click and drag the mouse to change the position of the point while
-                        observing the change in coordinates in the observations section.
+                        The left side of the UI shows the current atom being used to construct the
+                        lattice and the target lattice which the simlulation expects the students to
+                        build.
                     </li>
-                    <li class="instr-font">
-                        Check the values in the text boxes by changing scaling factor.
+                    <li class="'instr-font">
+                        The section below provides various utilities like 'Add atom'(add atoms at
+                        the position of the mouse click) , 'Add atom at a Coordintate' ( to add
+                        atoms at the specified coordintates), 'select Atom'( enable / disable
+                        selecting atom mode).
                     </li>
-                    <li class="instr-font">
-                        Add new shapes by clicking on the “Add” button which provides us with
-                        different options to select the type of shape and also set its position.
-                        Multiple shapes may be added.
+                    <li class="'instr-font">
+                        After adding the atoms and selecting them, use 'select region'( to create a
+                        convex hull) toe visualize the convex hull which encapsulates the selected
+                        atoms.
                     </li>
-                    <li class="instr-font">
-                        Double click on the object to select the shape for edit and delete. After
-                        double clicking on the object click on the edit button to edit the shape and
-                        similarly on the delete button to delete the selected shape.
-                    </li>
-                    <li class="instr-font">
-                        Drag the vertices of the shapes from anywhere on the screen.
-                    </li>
-                    <li class="instr-font">
-                        Tick on the checkboxes to add xy-grid and yz-grid and xz-grid and similarly
-                        untick to delete.
-                    </li>
-                    <li class="instr-font">
-                        Enable Lock Vertices option and drag from anywhere on the canvas which
-                        results in translation of the whole simulation.
+                    <li class="'instr-font">
+                        After selecting the atoms which the student thinks form the lattice of
+                        interest. Clicking 'Check packing' will validate if the lattice contructed
+                        is valid or not. The results will be dispalyed on the obesrvation section on
+                        the right.
                     </li>
                 </div>
             </div>
@@ -59,29 +51,34 @@
         <main
             class="columns is-centered is-variable is-1-mobile is-flex is-flex-wrap-wrap workspace"
         >
-            <aside id="left" class="column is-2-desktop is-5-tablet is-5-mobile apparatus">
+            <aside id="left" class="column is-3-desktop is-5-tablet is-5-mobile apparatus">
                 <div class="v-datalist-container">
                     <div class="v-datalist-row">
-                        <select class="dropbtn" name="atomtype" id="atomtype">
-                            <option value="Zn">Zn</option>
-                            <option value="Cl">Cl</option>
-                            <option value="Cs">Cs</option>
-                            <option value="S">S</option>
-                            <option value="Na">Na</option>
-                            <option value="C">C</option>
-                        </select>
+                        <div class="v-datalist-title">
+                            Current Atom
+                            <select class="dropbtn" name="atomtype" id="atomtype">
+                                <option value="Zn">Zn</option>
+                                <option value="Cl">Cl</option>
+                                <option value="Cs">Cs</option>
+                                <option value="S">S</option>
+                                <option value="Na">Na</option>
+                                <option value="C">C</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="v-datalist-row">
-                        <select class="dropbtn" name="latticetype" id="latticetype">
-                            <option value="CCP">CCP</option>
-                            <option value="FCC">FCC</option>
-                            <option value="BCC">BCC</option>
-                            <option value="HCP">HCP</option>
-                        </select>
+                        <div class="v-datalist-title">
+                            Target Lattice
+                            <select class="dropbtn" name="latticetype" id="latticetype">
+                                <option value="CCP">CCP</option>
+                                <option value="FCC">FCC</option>
+                                <option value="BCC">BCC</option>
+                                <option value="HCP">HCP</option>
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="v-datalist-row">
+                    <div class="v-datalist-row" id="top-border">
                         <input
                             class="button is-responsive is-small is-link"
                             style="margin: 0.5rem"
@@ -106,13 +103,13 @@
                             value="SELECT REGION"
                         />
 
-                        <input
+                        <!-- <input
                             class="button is-responsive is-small is-link"
                             style="margin: 0.5rem"
                             id="SelectAll"
                             type="submit"
                             value="SELECT ALL ATOMS"
-                        />
+                        /> -->
 
                         <input
                             class="button is-responsive is-small is-link"
@@ -121,7 +118,6 @@
                             type="submit"
                             value="CHECK PACKING"
                         />
-                        <div id="latticeCheck"></div>
                     </div>
 
                     <div class="v-datalist-row" id="top-border">
@@ -149,6 +145,7 @@
                                     name="z"
                                     value="1"
                                 />
+                                <br />
                                 <button
                                     class="button is-responsive is-small is-link"
                                     style="margin: 0.5rem"
@@ -185,6 +182,7 @@
                                     name="z"
                                     value="1"
                                 />
+                                <br />
                                 <button
                                     class="button is-responsive is-small is-link"
                                     style="margin: 0.5rem"
@@ -221,6 +219,7 @@
                                     name="z"
                                     value="1"
                                 />
+                                <br />
                                 <button
                                     class="button is-responsive is-small is-link"
                                     style="margin: 0.5rem"
@@ -231,7 +230,7 @@
                             </form>
                         </div>
                     </div>
-
+                    <br />
                     <div class="v-datalist-row" id="top-border">
                         <div class="v-datalist-title">Translate Pattern</div>
 
@@ -259,7 +258,7 @@
                                         name="z"
                                         value="1"
                                     />
-                                    <label style="padding: 0.5rem">N:</label>
+                                    <label for="n-value">N:</label>
                                     <input
                                         class="input is-responsive is-small smol-wid"
                                         type="text"
@@ -267,6 +266,7 @@
                                         value="10"
                                         placeholder="Scale"
                                     />
+                                    <br />
                                     <button
                                         class="button is-responsive is-small is-link"
                                         style="margin: 0.5rem"
@@ -306,6 +306,7 @@
                                         name="z"
                                         value="1"
                                     />
+                                    <br />
                                     <button
                                         class="button is-responsive is-small is-link"
                                         style="margin: 0.5rem"
@@ -320,8 +321,15 @@
                 </div>
             </aside>
 
-            <aside class="column is-8-desktop is-10-tablet is-10-mobile exp">
+            <aside id="center" class="column is-7-desktop is-8-tablet is-8-mobile apparatus">
                 <div class="v-canvas-container" id="canvas-main"></div>
+            </aside>
+            <aside id="right" class="column is-2-desktop is-5-tablet is-5-mobile apparatus">
+                <div class="v-datalist-container">
+                    <div class="v-datalist-title">Observations</div>
+                    <div class="v-datalist-row" id="top-border"></div>
+                    <div id="latticeCheck"></div>
+                </div>
             </aside>
         </main>
         <script type="module" src="js/three.js"></script>
