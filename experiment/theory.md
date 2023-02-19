@@ -1,6 +1,6 @@
 # Understanding the packing in crystal lattices
 
-The Bravais Lattice can be considered as the buildig block from which all crystals can be constructed. There exist 14 different Bravais lattices which can be grouped into 7 different crystal systems. The smallest repeating unit called the unit cell between these systems can be distinguished by a set of parameters called lattice parameters. These are a,b,c (which comprise of the lengths of edges of the unit cell) and α, β, and γ (which comprise of the angles subtended between the edges). For this experiement we will be focussing on cubic systems and hexagonal system.
+The Bravais Lattice can be considered as the building block from which all crystals can be constructed. There exist 14 different Bravais lattices which can be grouped into 7 different crystal systems. The smallest repeating unit called the unit cell between these systems can be distinguished by a set of parameters called lattice parameters. These are a,b,c (which comprise of the lengths of edges of the unit cell) and α, β, and γ (which comprise of the angles subtended between the edges). For this experiement we will be focusing on cubic systems and hexagonal system.
 
 | Crystal System  | Axial lengths and angles |
 | ------------- | ------------- |
