@@ -10,7 +10,7 @@ The Bravais Lattice can be considered as the buildig block from which all crysta
 ### Simple Cubic
 The simple cubic unit cell is basically a cube with an atom at each corner, resulting in a total of 8 atoms.
 
-![SCP]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/SCP.jfif)?raw=true)
+![SCP](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/SCP.jfif?raw=true)
 
 
 * Coordination number: 6
@@ -21,7 +21,7 @@ The simple cubic unit cell is basically a cube with an atom at each corner, resu
 The body-centered cubic unit cell has atoms at each of the eight corners of a cube (like the cubic unit cell) plus one atom in the center of the cube (left image below). Each of the corner atoms is the corner of another cube so the corner atoms are shared among eight unit cells.
 
 
-![BCC]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/BCC.jpg)?raw=true)
+![BCC](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/BCC.jpg?raw=true)
 
 
 * Coordination number: 8
@@ -30,7 +30,7 @@ The body-centered cubic unit cell has atoms at each of the eight corners of a cu
 
 ### Face Centered Cubic
 The face centered cubic structure has atoms located at each of the corners and the centers of all the cubic faces (left image below). Each of the corner atoms is the corner of another cube so the corner atoms are shared among eight unit cells. Additionally, each of its six face centered atoms is shared with an adjacent atom.
-![FCC]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/FCC.jpg)?raw=true)
+![FCC](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/FCC.jpg?raw=true)
 
 * Coordination number: 12
 * Packing Fraction: 74%
@@ -39,7 +39,7 @@ The face centered cubic structure has atoms located at each of the corners and t
 ### Hexagonal Closed Packing
 The hexagonal structure of alternating layers is shifted so its atoms are aligned to the gaps of the preceding layer. The atoms from one layer nest themselves in the empty space between the atoms of the adjacent layer just like in the fcc structure. However, instead of being a cubic structure, the pattern is hexagonal. The hcp structure has three layers of atoms. In each the top and bottom layer, there are six atoms that arrange themselves in the shape of a hexagon and a seventh atom that sits in the middle of the hexagon. 
 
-![HCP]([https://github.com/[username]/[reponame]/blob/[branch]/image.jpg](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/HCP.jpg)?raw=true)
+![HCP](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/HCP.jpg?raw=true)
 
 * Coordination number: 12
 * Packing Fraction: 74%
