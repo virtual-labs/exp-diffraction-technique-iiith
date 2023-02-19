@@ -24,7 +24,7 @@
         "d": "Lattice lengths"
       },
       "explanations": {
-        "b": "These six values are parameters of a lattice and hence are called lattice parameters",
+        "b": "These six values are parameters of a lattice and hence are called lattice parameters"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
