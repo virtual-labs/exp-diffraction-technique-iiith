@@ -1,1 +1,10 @@
 ### Procedure
+This experiment is about constructing a lattice, more specifically an unit cell of a lattice. There are four lattices in this experiment and they are SCP, FCC, BCC and HCP. It is expected that an unit cell is built, the atoms of the unit cell are selected and then verified to check whether the right unit cell was built.
+<br>
+The steps for the experiment are given below
+- The "add atom" button is a toggle switch. When clicked, it enables to click anywhere on the canvas and add an atom. We do not recommend using this to construct the lattices. This feature is for testing out atom positions etc.
+- We do recommend using the features "add atom at coordinates" which adds atom at a specified coordinate, "repeat selected pattern once" which repeats selected atoms in the vector direction specified once, "translate pattern" repeats in the given vector direction N times and "move selected pattern" which shifts the selected atoms in the given vector direction
+- It is also recommended to use "add dummy atom at coordinate" to add a fake atom at a coordinate and have a self-check at the authenticity of the answer before submitting it. Note that dummy atoms will not be considered by the final "check packing" button.
+- Once an unit cell is built using the above mentioned features, it is expected that the atoms which consist the unit cell be selected while choosing the lattice type from the dropdown and then clicking on the "check packing" button, which will reveal the correctness of the unit cell built.
+- For some lattices, it can be hard to select the inner atoms and hence we have the option to "select region" which will select all atoms in a region enclosed by selected atoms. It will also select atoms whose centres lie on the surface of this polyhedron formed.
+- For some lattices, it will be observed that the coordinates of atoms will be irrational in some cases. In these cases, an input with atleast 3 digit precision in the decimal place is expected for an accurate check of the unit cell created.
