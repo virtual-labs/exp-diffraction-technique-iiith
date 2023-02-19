@@ -43,7 +43,7 @@ The hexagonal structure of alternating layers is shifted so its atoms are aligne
 * Packing Fraction: 74%
 * Edge Length: 2R, 2x1.633R
 
-## Symmary
+## Summary
 
 | Crystal Structure	| SC | 	BCC |	FCC |	HCP |
 | ------------- | ------------- | --------| ---------| --------- |
