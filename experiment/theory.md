@@ -12,7 +12,6 @@ The simple cubic unit cell is basically a cube with an atom at each corner, resu
 
 ![SCP](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/SCP.jfif?raw=true)
 
-
 * Coordination number: 6
 * Packing Fraction: 52 %
 * Edge Length: 2R
@@ -20,9 +19,7 @@ The simple cubic unit cell is basically a cube with an atom at each corner, resu
 ### Body Centered Cubic 
 The body-centered cubic unit cell has atoms at each of the eight corners of a cube (like the cubic unit cell) plus one atom in the center of the cube (left image below). Each of the corner atoms is the corner of another cube so the corner atoms are shared among eight unit cells.
 
-
 ![BCC](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/BCC.jpg?raw=true)
-
 
 * Coordination number: 8
 * Packing Fraction: 68 %
@@ -30,6 +27,7 @@ The body-centered cubic unit cell has atoms at each of the eight corners of a cu
 
 ### Face Centered Cubic
 The face centered cubic structure has atoms located at each of the corners and the centers of all the cubic faces (left image below). Each of the corner atoms is the corner of another cube so the corner atoms are shared among eight unit cells. Additionally, each of its six face centered atoms is shared with an adjacent atom.
+
 ![FCC](https://github.com/virtual-labs/exp-diffraction-technique-iiith/blob/testing/experiment/images/FCC.jpg?raw=true)
 
 * Coordination number: 12
