@@ -180,7 +180,6 @@ aside {
   border-radius: 0.5rem;
   font-weight: bold;
 }
-
 .switch {
   position: relative;
   display: inline-block;
@@ -275,7 +274,6 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
 #add-shape-btn {
   background-color: #3298dc;
   border-radius: 0.5rem;
