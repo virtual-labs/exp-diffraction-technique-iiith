@@ -44,7 +44,7 @@ var orthographic_camera = new THREE.OrthographicCamera(
   1,
   1000,
 )
-var camera = orthographic_camera
+var camera = perspective_camera
 
 // init the orbit controls
 var controls = new OrbitControls(camera, renderer.domElement)
@@ -150,7 +150,9 @@ const selectRegion = document.getElementById('SelectRegion')
 
 selectRegion.addEventListener('click', function () {
   if (SelectAtomList.length < 4) {
-    alert('Select Region Button expects atleast 4 points to be selected')
+    alert(
+      'Select Region Button expects atleast 4 non planar points to be selected',
+    )
     return
   }
   for (let i = 0; i < HullList.length; i++) {
