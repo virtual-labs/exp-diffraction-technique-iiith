@@ -82,6 +82,7 @@ Checked.addEventListener('click', function () {
   controls.enableDamping = true
   camera.position.set(25, 25, 25)
 })
+
 // to check the current object which keyboard points to
 let INTERSECTED
 
@@ -251,7 +252,7 @@ formAdd.addEventListener('submit', function () {
     parseFloat(vec[1].value),
     parseFloat(vec[2].value),
   )
-  var addedatom = addSphereAtCoordinate(AddVec, atomtype)
+  var addedatom = addSphereAtCoordinate(AddVec, 'Y')
   console.log(AddVec, addedatom)
   scene.add(addedatom)
   atomList.push(addedatom)
@@ -273,29 +274,29 @@ formAdddummy.addEventListener('submit', function () {
   atomList.push(addedatom)
 })
 
-// respond to repeat
-const formRepeat = document.getElementById('repeat')
-formRepeat.addEventListener('submit', function () {
-  console.log('repeating')
-  var vec = formRepeat.elements
-  var repeatVec = new THREE.Vector3(
-    parseFloat(vec[0].value),
-    parseFloat(vec[1].value),
-    parseFloat(vec[2].value),
-  )
-  var newAtoms = RepeatPattern(SelectAtomList, repeatVec)
+// // respond to repeat
+// const formRepeat = document.getElementById('repeat')
+// formRepeat.addEventListener('submit', function () {
+//   console.log('repeating')
+//   var vec = formRepeat.elements
+//   var repeatVec = new THREE.Vector3(
+//     parseFloat(vec[0].value),
+//     parseFloat(vec[1].value),
+//     parseFloat(vec[2].value),
+//   )
+//   var newAtoms = RepeatPattern(SelectAtomList, repeatVec)
 
-  console.log(repeatVec, newAtoms)
-  for (let i = 0; i < newAtoms.length; i++) {
-    scene.add(newAtoms[i])
-    atomList.push(newAtoms[i])
-  }
-  SelectAtomList = []
-  for (let i = 0; i < HullList.length; i++) {
-    scene.remove(HullList[i])
-  }
-  console.log(atomList)
-})
+//   console.log(repeatVec, newAtoms)
+//   for (let i = 0; i < newAtoms.length; i++) {
+//     scene.add(newAtoms[i])
+//     atomList.push(newAtoms[i])
+//   }
+//   SelectAtomList = []
+//   for (let i = 0; i < HullList.length; i++) {
+//     scene.remove(HullList[i])
+//   }
+//   console.log(atomList)
+// })
 
 // respond to translate
 const formTranslate = document.getElementById('translate')
