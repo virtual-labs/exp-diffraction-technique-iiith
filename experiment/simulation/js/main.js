@@ -204,7 +204,7 @@ function templattice() {
     }
   }
 }
-templattice()
+// templattice()
 
 const Slider = document.getElementById('radiiSlider')
 const sliderval = document.getElementById('radiisliderval')
