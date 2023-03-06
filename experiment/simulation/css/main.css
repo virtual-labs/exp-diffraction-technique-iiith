@@ -310,6 +310,10 @@ input:checked + .slider:before {
   background-color: #48c774;
   border-radius: 0.5rem;
 }
+#ClearSelection {
+  background-color: #48c774;
+  border-radius: 0.5rem;
+}
 #CheckSC {
   background-color: #48c774;
   border-radius: 0.5rem;
@@ -482,6 +486,13 @@ input:checked + .slider:before {
 
 #CheckSC {
   background-color: #48c774;
+  border-radius: 0.5rem;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+#ClearSelection {
+  background-color: #3298dc;
   border-radius: 0.5rem;
   color: black;
   font-size: 16px;

@@ -117,14 +117,25 @@ export function CheckHover(mouse, camera, atomList, INTERSECTED) {
   return INTERSECTED
 }
 
-export function DeleteObject(mouse, camera, scene, atomList, INTERSECTED) {
+export function DeleteObject(
+  mouse,
+  camera,
+  scene,
+  atomList,
+  SelectAtomList,
+  INTERSECTED,
+) {
   INTERSECTED = CheckHover(mouse, camera, atomList, INTERSECTED)
-  scene.remove(INTERSECTED)
-  // atomList.remove(INTERSECTED);
-  const index = atomList.indexOf(INTERSECTED)
-  if (index > -1) {
-    atomList.splice(index, 1)
+
+  if (INTERSECTED) {
+    scene.remove(INTERSECTED)
+    // atomList.remove(INTERSECTED);
+    var index = atomList.indexOf(INTERSECTED)
+    if (index > -1) {
+      atomList.splice(index, 1)
+    }
   }
+  return INTERSECTED
 }
 
 export function AddLight() {
