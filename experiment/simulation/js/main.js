@@ -149,20 +149,30 @@ selectRegion.addEventListener('click', function () {
 })
 
 // respond to click addAtom
-const addSphereButton = document.getElementById('AddAtom')
-addSphereButton.addEventListener('click', function () {
-  console.log('adding atom mode')
-  if (action != 'addAtom') {
-    action = 'addAtom'
-  } else {
-    action = ''
-  }
-})
+// const addSphereButton = document.getElementById('AddAtom')
+// addSphereButton.addEventListener('click', function () {
+//   console.log('adding atom mode')
+//   if (action != 'addAtom') {
+//     action = 'addAtom'
+//   } else {
+//     action = ''
+//   }
+// })
 
 // respond to select a bunch of atoms
-const addSelectList = document.getElementById('SelectAtom')
-addSelectList.addEventListener('click', function () {
-  console.log('selecting atom mode')
+// const addSelectList = document.getElementById('SelectAtom')
+// addSelectList.addEventListener('click', function () {
+//   console.log('selecting atom mode')
+//   if (action != 'selectAtom') {
+//     action = 'selectAtom'
+//   } else {
+//     action = ''
+//     SelectAtomList = []
+//   }
+// })
+
+let toggleselectbutton = document.getElementById('ToggleSelect')
+toggleselectbutton.addEventListener('click', function () {
   if (action != 'selectAtom') {
     action = 'selectAtom'
   } else {
@@ -170,6 +180,43 @@ addSelectList.addEventListener('click', function () {
     SelectAtomList = []
   }
 })
+
+function templattice() {
+  console.log('adding body centered cubic')
+  let latticedims = [4, 4, 4]
+  for (let x = -4; x < latticedims[0]; x += 4) {
+    for (let y = -4; y < latticedims[1]; y += 4) {
+      for (let z = -4; z < latticedims[2]; z += 4) {
+        let pos = new THREE.Vector3(x, y, z)
+        let atom = addSphereAtCoordinate(pos, 'Y')
+        atomList.push(atom)
+        scene.add(atom)
+      }
+    }
+  }
+}
+// templattice()
+
+const Slider = document.getElementById('radiiSlider')
+const sliderval = document.getElementById('radiisliderval')
+sliderval.innerHTML = Slider.valueAsNumber
+var currentradii = Slider.valueAsNumber
+
+Slider.oninput = function () {
+  currentradii = Slider.valueAsNumber
+  sliderval.innerHTML = Slider.valueAsNumber
+  var newatomlist = []
+
+  for (let i = 0; i < atomList.length; i++) {
+    var pos = atomList[i].position
+    let atom = addSphereAtCoordinate(pos, 'Y')
+    scene.remove(atomList[i])
+    scene.add(atom)
+    newatomlist.push(atom)
+  }
+  atomList = newatomlist
+  SelectAtomList = []
+}
 
 // respond to check for SCP
 
@@ -229,6 +276,7 @@ formRepeat.addEventListener('submit', function () {
     parseFloat(vec[2].value),
   )
   var newAtoms = RepeatPattern(SelectAtomList, repeatVec)
+
   console.log(repeatVec, newAtoms)
   for (let i = 0; i < newAtoms.length; i++) {
     scene.add(newAtoms[i])
@@ -238,6 +286,7 @@ formRepeat.addEventListener('submit', function () {
   for (let i = 0; i < HullList.length; i++) {
     scene.remove(HullList[i])
   }
+  console.log(atomList)
 })
 
 // respond to translate
@@ -318,7 +367,7 @@ var render = function () {
   latticetype = currentlattice.options[currentlattice.selectedIndex].text
 
   highlightSelectList(SelectAtomList, atomList)
-  updateButtonCSS(action)
+  //   updateButtonCSS(action)
   INTERSECTED = CheckHover(mouse, camera, atomList, INTERSECTED)
   requestAnimationFrame(render)
   controls.update()

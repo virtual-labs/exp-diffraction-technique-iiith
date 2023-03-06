@@ -79,21 +79,47 @@
                         </div>
                     </div>
                     <div class="v-datalist-row" id="top-border">
-                        <input
+                        <div class="v-datalist-title" id="disp-heading">Toggle Select mode</div>
+                        <label class="switch">
+                            <input type="checkbox" id="ToggleSelect" />
+                            <span class="slider round"></span>
+                        </label>
+                        <br />
+                    </div>
+                    <div class="v-datalist-row" id="top-border">
+                        <div class="v-datalist-title" id="disp-heading">
+                            Change radius of atoms using slider
+                        </div>
+
+                        <div class="slidecontainer">
+                            <input
+                                type="range"
+                                min="0"
+                                max="10"
+                                value="1"
+                                step="0.1"
+                                class="radiislider"
+                                id="radiiSlider"
+                            />
+                            <p>Value: <span id="radiisliderval"></span></p>
+                        </div>
+                    </div>
+                    <div class="v-datalist-row" id="top-border">
+                        <!-- <input
                             class="button is-responsive is-small is-link"
                             style="margin: 0.5rem"
                             id="AddAtom"
                             type="submit"
                             value="ADD ATOM"
-                        />
+                        /> -->
 
-                        <input
+                        <!-- <input
                             class="button is-responsive is-small is-link"
                             style="margin: 0.5rem"
                             id="SelectAtom"
                             type="submit"
                             value="SELECT ATOMS"
-                        />
+                        /> -->
 
                         <input
                             class="button is-responsive is-small is-link"
