@@ -143,6 +143,9 @@ currentlattice.addEventListener('click', function () {
   for (let i = 0; i < HullList.length; i++) {
     scene.remove(HullList[i])
   }
+  atomList = []
+  HullList = []
+  SelectAtomList = []
 })
 
 // select region enclosed between the atoms
