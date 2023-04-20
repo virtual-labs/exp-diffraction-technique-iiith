@@ -125,8 +125,8 @@ var atomList = []
 var SelectAtomList = []
 var BoundaryAtomList = []
 
-var currentatom = document.getElementById('atomtype')
-var atomtype = currentatom.options[currentatom.selectedIndex].text
+// var currentatom = document.getElementById('atomtype')
+// var atomtype = currentatom.options[currentatom.selectedIndex].text
 
 var currentlattice = document.getElementById('latticetype')
 var latticetype = currentlattice.options[currentlattice.selectedIndex].text
@@ -400,15 +400,15 @@ document.addEventListener('keydown', function (event) {
 var render = function () {
   // console.log(action, atomList, SelectAtomList, BoundaryAtomList);
   //console.log(BoundaryAtomList);
-  currentatom = document.getElementById('atomtype')
-  atomtype = currentatom.options[currentatom.selectedIndex].text
+  //   currentatom = document.getElementById('atomtype')
+  //   atomtype = currentatom.options[currentatom.selectedIndex].text
 
   currentlattice = document.getElementById('latticetype')
   latticetype = currentlattice.options[currentlattice.selectedIndex].text
 
   highlightSelectList(SelectAtomList, atomList)
   //   updateButtonCSS(action)
-  console.log(SelectAtomList.length)
+  //   console.log(SelectAtomList.length)
   INTERSECTED = CheckHover(mouse, camera, atomList, INTERSECTED)
   requestAnimationFrame(render)
   controls.update()
