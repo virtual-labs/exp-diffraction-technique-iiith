@@ -30,7 +30,7 @@
       "difficulty": "beginner"
     },
         {
-      "question": "What is the coordination number of SCP?",
+      "question": "What is the coordination number of SC?",
       "answers": {
         "a": "2",
         "b": "1",
@@ -38,7 +38,7 @@
         "d": "6"
       },
       "explanations": {
-        "d": "There are 6 neighbouring atoms for each atom in SCP lattice"
+        "d": "There are 6 neighbouring atoms for each atom in SC lattice"
       },
       "correctAnswer": "d",
       "difficulty": "intermediate"
@@ -75,12 +75,12 @@
       "question": "Which of these lattices have the highest packing fraction?",
       "answers": {
         "a": "BCC",
-        "b": "FCP",
+        "b": "FCC",
         "c": "HCP",
         "d": "Both (b) and (c)"
       },
       "explanations": {
-        "d": "Both FCP and HCP have equally the highest packing fraction among the options at 74%"
+        "d": "Both FCC and HCP have equally the highest packing fraction among the options at 0.74"
       },
       "correctAnswer": "d",
       "difficulty": "advanced"

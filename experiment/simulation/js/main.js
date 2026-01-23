@@ -12,7 +12,7 @@ import {
   updateButtonCSS,
   highlightSelectList,
   moveSelectList,
-  checkSCP,
+  checkSC,
   select_Region,
 } from './utils.js'
 
@@ -106,14 +106,21 @@ function getMouseCoords(event) {
   return mouse
 }
 var mouse = new THREE.Vector2()
-//  detect mouse click
+
+//  detect mouse click with jitter tolerance
 let drag = false
+let startX = 0
+let startY = 0
+
 document.addEventListener('mousedown', function (event) {
   drag = false
+  startX = event.clientX
+  startY = event.clientY
   mouse = getMouseCoords(event)
 })
+
 document.addEventListener('mousemove', function (event) {
-  drag = true
+  // Don't set drag=true immediately. We check distance in mouseup.
   mouse = getMouseCoords(event)
 })
 
@@ -237,7 +244,7 @@ Slider.oninput = function () {
 const addCheckSC = document.getElementById('CheckSC')
 addCheckSC.addEventListener('click', function () {
   console.log('checking SCP packing')
-  var checkresult = checkSCP(latticetype, CurrentHull)
+  var checkresult = checkSC(latticetype, CurrentHull)
   if (checkresult) {
     document.getElementById('latticeCheck').innerHTML =
       "<span style='color: Green; font-size: 20px;'>Correct</span>"
@@ -352,6 +359,15 @@ window.addEventListener('resize', () => {
 })
 
 document.addEventListener('mouseup', function (event) {
+  // Logic for jitter tolerance (5 pixels)
+  let diffX = Math.abs(event.clientX - startX)
+  let diffY = Math.abs(event.clientY - startY)
+  if (diffX < 5 && diffY < 5) {
+    drag = false
+  } else {
+    drag = true
+  }
+
   if (drag == false) {
     // if the action is add atom
     if (action == 'addAtom') {

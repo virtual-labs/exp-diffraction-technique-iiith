@@ -249,14 +249,14 @@ export function moveSelectList(SelectAtomList, moveVector) {
   }
 }
 
-export function checkSCP(latticetype, CurrentHull) {
+export function checkSC(latticetype, CurrentHull) {
   var Faces = []
   Faces = CurrentHull.faces
   var Areas = []
   for (let i = 0; i < Faces.length; i++) {
     Areas.push(Faces[i].area)
   }
-  if (latticetype == 'CCP') {
+  if (latticetype == 'SC') {
     for (let i = 0; i < Areas.length - 1; i++) {
       for (let j = i + 1; j < Areas.length; j++) {
         if (Areas[i] > Areas[j] && Areas[i] - Areas[j] > 0.1 * Areas[j]) {
@@ -272,8 +272,8 @@ export function checkSCP(latticetype, CurrentHull) {
     return true
   }
   if (latticetype == 'FCC') {
-    list1 = []
-    list2 = []
+    let list1 = []
+    let list2 = []
     list1.push(Areas[0])
     for (let i = 1; i < Areas.length; i++) {
       if (Areas[i] - Areas[0] > 0.1 * Areas[0]) {
@@ -309,8 +309,8 @@ export function checkSCP(latticetype, CurrentHull) {
     // do something
   }
   if (latticetype == 'HCP') {
-    list1 = []
-    list2 = []
+    let list1 = []
+    let list2 = []
     list1.push(Areas[0])
     for (let i = 1; i < Areas.length; i++) {
       if (Areas[i] - Areas[0] > 0.1 * Areas[0]) {

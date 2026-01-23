@@ -1,5 +1,5 @@
 ### Procedure
-This experiment focuses on constructing a unit cell of a lattice. You will work with four different lattices: **Simple Cubic (SCP)**, **Face-Centered Cubic (FCC)**, **Body-Centered Cubic (BCC)**, and **Hexagonal Close-Packed (HCP)**. The goal is to build the correct unit cell by selecting the appropriate atoms and verifying the construction. 
+This experiment focuses on constructing a unit cell of a lattice. You will work with four different lattices: **Simple Cubic (SC)**, **Face-Centered Cubic (FCC)**, **Body-Centered Cubic (BCC)**, and **Hexagonal Close-Packed (HCP)**. The goal is to build the correct unit cell by selecting the appropriate atoms and verifying the construction. 
 
 ### Steps for the Experiment
 - Interface Overview:

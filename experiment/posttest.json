@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "If R is the radius of the atom in a SCP unit cell, then what is the edge length?",
+      "question": "If R is the radius of the atom in a SC unit cell, then what is the edge length?",
       "answers": {
         "a": "R",
         "b": "1.5R",
