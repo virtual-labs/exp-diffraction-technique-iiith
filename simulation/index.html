@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/css/style.min.css"
+        />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+
+    <body class="page" style="margin: 1rem">
+        <section class="columns is-centered is-flex column">
+            <div class="v-collapsible-instruction-container">
+                <div class="v-collapsible">Instructions</div>
+                <div id="procedure-message" class="v-content">
+                    <li class="instr-font">Use the dropdown to select a lattice of your choice.</li>
+                    <li class="'instr-font">
+                        Left click and drag to move the camera around. You can use the mouse scroll
+                        wheel to zoom in or zoom out. You can use the select camera button to switch
+                        between orthogonal and perspective cameras. You can use the slider to
+                        increase or decrease the radius of atoms for better visibility.
+                    </li>
+                    <li class="'instr-font">
+                        To select atoms, click on the select atoms switch. It is to be noted that
+                        the select atoms option is a toggle switch. Left click to select, richt
+                        click to de-select in select mode. Once you have made your choice, click on
+                        the select region to visualize the convex hull created by the selected
+                        atoms.
+                    </li>
+                    <li class="'instr-font">
+                        Please select the set of atoms(in any order), all of which are a part of the
+                        unit cell and click on check packing to evaluate the choice.
+                    </li>
+                </div>
+            </div>
+        </section>
+
+        <main
+            class="columns is-centered is-variable is-1-mobile is-flex is-flex-wrap-wrap workspace"
+        >
+            <aside id="left" class="column is-3-desktop is-5-tablet is-5-mobile apparatus">
+                <div class="v-datalist-container">
+                    <div class="v-datalist-row">
+                        <div class="v-datalist-title">
+                            Target Lattice
+                            <select class="dropbtn" name="latticetype" id="latticetype">
+                                <option value="SC">SC</option>
+                                <option value="FCC">FCC</option>
+                                <option value="BCC">BCC</option>
+                                <option value="HCP">HCP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="v-datalist-row" id="top-border">
+                        <div>
+                            <div class="v-datalist-title" id="disp-heading">Toggle Select mode</div>
+                            <label class="switch">
+                                <input type="checkbox" id="ToggleSelect" />
+                                <span class="slider round"> </span>
+                            </label>
+                        </div>
+                        <div>
+                            <div class="v-datalist-title" id="disp-heading">Toggle camera</div>
+                            <label class="switch">
+                                <input type="checkbox" id="ToggleCamera" />
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="v-datalist-row" id="top-border">
+                        <div class="v-datalist-title" id="disp-heading">
+                            Change radius of atoms using slider
+                        </div>
+
+                        <div class="slidecontainer">
+                            <input
+                                type="range"
+                                min="0.1"
+                                max="2"
+                                value="0.4"
+                                step="0.1"
+                                class="radiislider"
+                                id="radiiSlider"
+                            />
+                            <p>Value: <span id="radiisliderval"></span></p>
+                        </div>
+                    </div>
+                    <div class="v-datalist-row" id="top-border">
+                        <input
+                            class="button is-responsive is-small is-link"
+                            style="margin: 0.5rem"
+                            id="SelectRegion"
+                            type="submit"
+                            value="SELECT REGION"
+                        />
+
+                        <input
+                            class="button is-responsive is-small is-link"
+                            style="margin: 0.5rem"
+                            id="CheckSC"
+                            type="submit"
+                            value="CHECK PACKING"
+                        />
+                        <br />
+                        <input
+                            class="button is-responsive is-small is-link"
+                            style="margin: 0.5rem"
+                            id="ClearSelection"
+                            type="submit"
+                            value="CLEAR SELECTIONS"
+                        />
+                    </div>
+
+                    <div class="v-datalist-row" id="top-border">
+                        <div class="v-datalist-title">Add atom at coordinates</div>
+                        <div style="display: flexbox; margin: 0.5rem">
+                            <form onsubmit="return false" id="addatom">
+                                <label for="x-value">X:</label>
+                                <input
+                                    class="input is-responsive is-small smol-wid"
+                                    type="text"
+                                    name="x"
+                                    value="1"
+                                />
+                                <label for="y-value">Y:</label>
+                                <input
+                                    class="input is-responsive is-small smol-wid"
+                                    type="text"
+                                    name="y"
+                                    value="1"
+                                />
+                                <label for="z-value">Z:</label>
+                                <input
+                                    class="input is-responsive is-small smol-wid"
+                                    type="text"
+                                    name="z"
+                                    value="1"
+                                />
+                                <br />
+                                <button
+                                    class="button is-responsive is-small is-link"
+                                    style="margin: 0.5rem"
+                                    id="AddAtomByCoordinate"
+                                >
+                                    ADD
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="v-datalist-row" id="top-border">
+                        <div class="v-datalist-title">Add dummy atom</div>
+                        <div style="display: flexbox; margin: 0.5rem">
+                            <form onsubmit="return false" id="adddummyatom">
+                                <label for="x-value">X:</label>
+                                <input
+                                    class="input is-responsive is-small smol-wid"
+                                    type="text"
+                                    name="x"
+                                    value="1"
+                                />
+                                <label for="y-value">Y:</label>
+                                <input
+                                    class="input is-responsive is-small smol-wid"
+                                    type="text"
+                                    name="y"
+                                    value="1"
+                                />
+                                <label for="z-value">Z:</label>
+                                <input
+                                    class="input is-responsive is-small smol-wid"
+                                    type="text"
+                                    name="z"
+                                    value="1"
+                                />
+                                <br />
+                                <button
+                                    class="button is-responsive is-small is-link"
+                                    style="margin: 0.5rem"
+                                    id="AddDummyAtomByCoordinate"
+                                >
+                                    ADD
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="v-datalist-row" id="top-border">
+                        <div class="v-datalist-title">Translate Pattern</div>
+
+                        <section>
+                            <div style="display: flexbox; margin: 0.5rem">
+                                <form onsubmit="return false" id="translate">
+                                    <label for="x-value">X:</label>
+                                    <input
+                                        class="input is-responsive is-small smol-wid"
+                                        type="text"
+                                        name="x"
+                                        value="1"
+                                    />
+                                    <label for="y-value">Y:</label>
+                                    <input
+                                        class="input is-responsive is-small smol-wid"
+                                        type="text"
+                                        name="y"
+                                        value="1"
+                                    />
+                                    <label for="z-value">Z:</label>
+                                    <input
+                                        class="input is-responsive is-small smol-wid"
+                                        type="text"
+                                        name="z"
+                                        value="1"
+                                    />
+                                    <label for="n-value">N:</label>
+                                    <input
+                                        class="input is-responsive is-small smol-wid"
+                                        type="text"
+                                        name="c"
+                                        value="10"
+                                        placeholder="Scale"
+                                    />
+                                    <br />
+                                    <button
+                                        class="button is-responsive is-small is-link"
+                                        style="margin: 0.5rem"
+                                        id="TranslatePattern"
+                                    >
+                                        ADD
+                                    </button>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="v-datalist-row" id="top-border">
+                        <div class="v-datalist-title">Move Selected Pattern</div>
+
+                        <section>
+                            <div style="display: flexbox; margin: 0.5rem">
+                                <form onsubmit="return false" id="move">
+                                    <label for="x-value">X:</label>
+                                    <input
+                                        class="input is-responsive is-small smol-wid"
+                                        type="text"
+                                        name="x"
+                                        value="1"
+                                    />
+                                    <label for="y-value">Y:</label>
+                                    <input
+                                        class="input is-responsive is-small smol-wid"
+                                        type="text"
+                                        name="y"
+                                        value="1"
+                                    />
+                                    <label for="z-value">Z:</label>
+                                    <input
+                                        class="input is-responsive is-small smol-wid"
+                                        type="text"
+                                        name="z"
+                                        value="1"
+                                    />
+                                    <br />
+                                    <button
+                                        class="button is-responsive is-small is-link"
+                                        style="margin: 0.5rem"
+                                        id="MoveSelectedPattern"
+                                    >
+                                        MOVE
+                                    </button>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </aside>
+
+            <aside id="center" class="column is-7-desktop is-8-tablet is-8-mobile apparatus">
+                <div class="v-canvas-container" id="canvas-main"></div>
+            </aside>
+            <aside id="right" class="column is-2-desktop is-5-tablet is-5-mobile apparatus">
+                <div class="v-datalist-container">
+                    <div class="v-datalist-title">Observations</div>
+                    <div class="v-datalist-row" id="top-border"></div>
+                    <div id="latticeCheck"></div>
+                </div>
+            </aside>
+        </main>
+        <script type="module" src="js/three.js"></script>
+        <script type="module" src="js/orbit.js"></script>
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/convex.js"></script>
+        <script type="module" src="js/hull.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/gh/virtual-labs/virtual-style@0.0.8-b/js/script.js"></script>
+    <script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>

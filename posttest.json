@@ -1,0 +1,89 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "If R is the radius of the atom in a SC unit cell, then what is the edge length?",
+      "answers": {
+        "a": "R",
+        "b": "1.5R",
+        "c": "2R",
+        "d": "0.5R"
+      },
+      "explanations": {
+        "c": "Two radii of atoms make up an edge"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If R is the radius of the atom in a BCC unit cell, then what is roughly the edge length?",
+      "answers": {
+        "a": "2.2R",
+        "b": "1.73R",
+        "c": "2.82R",
+        "d": "2R"
+      },
+      "explanations": {
+        "a": "Four radii make up the diagonal of the cube"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "If R is the radius of the atom in a FCC unit cell, then what is roughly the edge length?",
+      "answers": {
+        "a": "a = 2.2R",
+        "b": "a = 1.73R",
+        "c": "a = 2.82R",
+        "d": "a = 2R"
+      },
+      "explanations": {
+        "c": "Four radii make up the diagonal of one face"
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "If R is the radius of the atom in a HCP unit cell, then what is roughly the edge length of a hexagon?",
+      "answers": {
+        "a": "a = 2.2R",
+        "b": "a = 1.73R",
+        "c": "a = 2.82R",
+        "d": "a = 2R"
+      },
+      "explanations": {
+        "d": "Two radii make up one edge of the hexagon"
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "What type of packing does CCP have?",
+      "answers": {
+        "a": "AAA",
+        "b": "ABABAB",
+        "c": "ABCABC",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "c": "This kind of layer packing can be clearly observed in CCP"
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+        {
+      "question": "What type of packing does HCP have?",
+      "answers": {
+        "a": "AAA",
+        "b": "ABABAB",
+        "c": "ABCABC",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "b": "The atoms of other layer rest in the gaps of the top layer and hence ABAB"
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    }
+  ]
+}
