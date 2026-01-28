@@ -2,38 +2,88 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "How many different Bravais lattices are there?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "10",
+        "b": "12",
+        "c": "14",
+        "d": "16"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "c": "There are 14 kinds of Bravais lattices"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "What are a,b,c,α,β,γ collectively called",
+      "answers": {
+        "a": "Lattice distances",
+        "b": "Lattice parameters",
+        "c": "Lattice angles",
+        "d": "Lattice lengths"
+      },
+      "explanations": {
+        "b": "These six values are parameters of a lattice and hence are called lattice parameters"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+        {
+      "question": "What is the coordination number of SC?",
+      "answers": {
+        "a": "2",
+        "b": "1",
+        "c": "4",
+        "d": "6"
+      },
+      "explanations": {
+        "d": "There are 6 neighbouring atoms for each atom in SC lattice"
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "What is the coordination number of BCC?",
+      "answers": {
+        "a": "2",
+        "b": "4",
+        "c": "6",
+        "d": "8"
+      },
+      "explanations": {
+        "d": "There are 8 neighbouring atoms for each atom in BCC lattice"
+      },
+      "correctAnswer": "d",
+      "difficulty": "intermediate"
+    },
+        {
+      "question": "What is the meaning of packing fraction?",
+      "answers": {
+        "a": "The ratio of volume occupied by atoms to the total volume of an unit cell",
+        "b": "The ratio of number of atoms in unit cell to the total number of atoms in the crystal",
+        "c": "The ratio of the coordination number of the lattice to the maximum possible coordination number",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "This is the mathematical formula to calculate packing fraction"
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+        {
+      "question": "Which of these lattices have the highest packing fraction?",
+      "answers": {
+        "a": "BCC",
+        "b": "FCC",
+        "c": "HCP",
+        "d": "Both (b) and (c)"
+      },
+      "explanations": {
+        "d": "Both FCC and HCP have equally the highest packing fraction among the options at 0.74"
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
     }
   ]
 }
